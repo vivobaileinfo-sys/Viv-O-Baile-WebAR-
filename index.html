@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Viv'O Baile WebAR</title>
+
+<script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.2/dist/mindar-image-aframe.prod.js"></script>
+
+<style>
+body{
+margin:0;
+overflow:hidden;
+font-family:Arial;
+}
+</style>
+</head>
+
+<body>
+
+<a-scene
+mindar-image="imageTargetSrc: targets.mind;"
+color-space="sRGB"
+renderer="colorManagement: true"
+vr-mode-ui="enabled:false"
+device-orientation-permission-ui="enabled:false"
+>
+
+<a-assets>
+
+<a-asset-item id="mic" src="assets/Microphone.glb"></a-asset-item>
+<a-asset-item id="guitar" src="assets/Electric guitar.glb"></a-asset-item>
+<a-asset-item id="keyboard" src="assets/Keyboard.glb"></a-asset-item>
+<a-asset-item id="drums" src="assets/Drum Kit.glb"></a-asset-item>
+
+</a-assets>
+
+<a-camera position="0 0 0" look-controls="enabled:false"></a-camera>
+
+<a-entity mindar-image-target="targetIndex:0">
+
+<!-- MODELOS 3D -->
+
+<a-gltf-model
+src="#mic"
+position="0 0.3 0"
+scale="0.2 0.2 0.2">
+</a-gltf-model>
+
+<a-gltf-model
+src="#guitar"
+position="0.5 0 0"
+scale="0.3 0.3 0.3">
+</a-gltf-model>
+
+<a-gltf-model
+src="#keyboard"
+position="-0.5 0 0"
+scale="0.3 0.3 0.3">
+</a-gltf-model>
+
+<a-gltf-model
+src="#drums"
+position="0 -0.3 0"
+scale="0.25 0.25 0.25">
+</a-gltf-model>
+
+<!-- MENU PRINCIPAL -->
+
+<a-entity position="0 0.8 0">
+
+<!-- BOTÃO BANDA -->
+
+<a-plane
+color="#ff0055"
+height="0.25"
+width="1"
+position="0 0 0"
+class="clickable">
+</a-plane>
+
+<a-text
+value="🎤 Banda"
+align="center"
+color="white"
+position="0 0 0.01"
+width="2">
+</a-text>
+
+<!-- BOTÃO MÚSICOS -->
+
+<a-plane
+color="#0066ff"
+height="0.25"
+width="1"
+position="0 -0.35 0"
+class="clickable">
+</a-plane>
+
+<a-text
+value="🎸 Musicos"
+align="center"
+color="white"
+position="0 -0.35 0.01"
+width="2">
+</a-text>
+
+<!-- BOTÃO CONTACTOS -->
+
+<a-plane
+color="#00aa55"
+height="0.25"
+width="1"
+position="0 -0.7 0"
+class="clickable">
+</a-plane>
+
+<a-text
+value="📞 Contactos"
+align="center"
+color="white"
+position="0 -0.7 0.01"
+width="2">
+</a-text>
+
+</a-entity>
+
+<!-- INFORMAÇÃO BANDA -->
+
+<a-text
+value="Os Viv'O Baile\nMusica de baile e animacao"
+align="center"
+color="yellow"
+position="0 1.4 0"
+width="3">
+</a-text>
+
+<!-- CONTACTOS -->
+
+<a-text
+value="Email: contacto@vivo-baile.pt\nTel: 912345678"
+align="center"
+color="white"
+position="0 -1 0"
+width="3">
+</a-text>
+
+</a-entity>
+
+</a-scene>
+
+</body>
+</html>
